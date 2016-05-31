@@ -56,6 +56,13 @@ angular.module('diff', [])
         }
       }
 
+      if ((out.n[0].row ) > 0) {
+        for (n=0; n < (out.n[0].row); n++) {
+          var text = out.o[n].constructor == Object ? out.o[n].text : out.o[n];
+          str += '<del>' + escape(text) + oSpace[n] + '</del>';
+        }
+      }
+
       for (i = 0; i < out.n.length; i++ ) {
         if (!out.n[i].text) {
           str += '<ins>' + escape(out.n[i]) + nSpace[i] + '</ins>';
