@@ -45,6 +45,13 @@ angular.module('diff', [])
       nSpace.push('\n');
     }
 
+    if (out.o.length == 1 && out.n.length == 1) {
+      str += '<del>' + escape(out.o[0]) + '</del>';
+      str += '<ins>' + escape(out.n[0]) + '</ins>';
+
+      return str;
+    }
+
     if (out.n.length === 0) {
       for (i = 0; i < out.o.length; i++) {
         str += '<del>' + escape(out.o[i]) + oSpace[i] + '</del>';
