@@ -46,8 +46,26 @@ angular.module('diff', [])
     }
 
     if (out.o.length == 1 && out.n.length == 1) {
-      str += '<del>' + escape(out.o[0]) + '</del>';
-      str += '<ins>' + escape(out.n[0]) + '</ins>';
+      var outo = '';
+      var outn = '';
+
+      if (out.o[0].text) {
+        outo = out.o[0].text;
+      } else {
+        outo = out.o[0];
+      }
+      if (out.n[0].text) {
+        outn = out.n[0].text;
+      } else {
+        outn = out.n[0];
+      }
+
+      if (outo != outn) {
+        str += '<del>' + escape(outo) + '</del>';
+        str += '<ins>' + escape(outn) + '</ins>';
+      } else {
+        str = outn;
+      }
 
       return str;
     }
