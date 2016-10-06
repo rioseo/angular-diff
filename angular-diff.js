@@ -19,7 +19,7 @@ angular.module('diff', [])
     n = n.replace(/&/g, '&amp;');
     n = n.replace(/</g, '&lt;');
     n = n.replace(/>/g, '&gt;');
-    n = n.replace(/'/g, '&quot;');
+    n = n.replace(/"/g, '&quot;');
 
     return n;
   }
