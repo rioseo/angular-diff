@@ -18,6 +18,7 @@
   "homepage": "https://github.com/matteosuppo/angular-diff",
   "devDependencies": {
     "gulp": "^3.6.2",
+    "karma": "0.13",
     "gulp-karma": "0.0.4",
     "gulp-concat": "^2.2.0",
     "gulp-ngmin": "^0.3.0",

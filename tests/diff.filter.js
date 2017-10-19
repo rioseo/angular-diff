@@ -13,5 +13,14 @@ describe('filter', function() {
         .$$unwrapTrustedValue()).toBe(
         ' The <del>red </del> brown <ins>spotted </ins> fox <del>jumped </del><ins>leaped </ins> over  the  rolling <del>log.\n</del><ins>log\n</ins>');
     }));
+    
+    it('detects difference of the first word', inject(function(diffFilter) {
+      expect(diffFilter(
+        'new hassan',
+        'nee hassan')
+        .$$unwrapTrustedValue()).toBe(
+        '<del>new </del><ins>nee </ins> hassan\n');
+    }));
+    
   });
 });
